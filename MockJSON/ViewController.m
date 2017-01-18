@@ -107,6 +107,7 @@
         [_textView setBackgroundColor:[NSColor orangeColor]];
     }
     
+    _textView.string = [_textView.string formatString];
     [FileService saveText:_textView.string toFile:fileName];
 }
 

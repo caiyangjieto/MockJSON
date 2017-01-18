@@ -14,6 +14,7 @@
 
 @interface NSString(Utility)
 
-- (BOOL) jsonValidate;
+- (BOOL)jsonValidate;
+- (NSString *)formatString;
 
 @end

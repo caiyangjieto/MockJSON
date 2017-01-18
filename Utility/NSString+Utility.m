@@ -13,10 +13,23 @@
 /**
  * OUT  :YES->合法；NO->不合法
  */
-- (BOOL) jsonValidate
+- (BOOL)jsonValidate
 {
     return [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding]
                                            options:NSJSONReadingMutableLeaves
                                              error:nil] != nil;
 }
+
+- (NSString *)formatString
+{
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding]
+                                                         options:NSJSONReadingMutableLeaves
+                                                           error:nil];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    NSString *result = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return result;
+}
+
 @end
