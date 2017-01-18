@@ -106,8 +106,10 @@
         [_textView setDrawsBackground:YES];
         [_textView setBackgroundColor:[NSColor orangeColor]];
     }
+    else{
+        _textView.string = [_textView.string formatString];
+    }
     
-    _textView.string = [_textView.string formatString];
     [FileService saveText:_textView.string toFile:fileName];
 }
 
