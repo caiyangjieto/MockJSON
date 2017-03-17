@@ -69,7 +69,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     // Initalize our http server
     [self getInstance].httpServer = [[HTTPServer alloc] init];
     [[self getInstance].httpServer setType:@"_http._tcp."];
-    [[self getInstance].httpServer setPort:8081];
+    [[self getInstance].httpServer setPort:8080];
     
     NSString *strSiteRoot = [FileService cacheJSONPath];
     DDLogInfo(@"Setting document root: %@", strSiteRoot);
